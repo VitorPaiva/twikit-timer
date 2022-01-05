@@ -29,8 +29,6 @@ export class TimeTableComponent implements OnInit {
         a.creationTime > b.creationTime ? -1 : 1  
         : a.creationTime > b.creationTime ? 1 : -1  
     })
-
-    this.times.forEach(i => console.log(i))
     this.times = [...this.times, ...current]
     this.ascending = !this.ascending;
   }
