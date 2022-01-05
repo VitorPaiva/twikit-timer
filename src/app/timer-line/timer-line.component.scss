@@ -1,0 +1,83 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$purple-palette, 500);
+$my-accent: mat.define-palette(mat.$green-palette, 600, 900);
+
+$my-theme: mat.define-light-theme((
+ color: (
+    primary: $my-primary,
+    accent: $my-accent,
+    test: $my-accent,
+ )
+));
+
+@include mat.button-theme($my-theme);
+
+.position-relative {
+    position: relative;
+} 
+
+.float-right {
+    float: right;
+} 
+
+.m-t-4 {
+    margin-top: 1rem;   
+}
+
+.m-r-4 {
+    margin-right: 1rem;   
+}
+
+.m-r-2 {
+    margin-right: 0.5rem;
+}
+
+.m-t-2 {
+    margin-top: 0.5rem;
+}
+
+.m-b-2 {
+    margin-bottom: 0.5rem;
+}
+
+.m-l-2 {
+    margin-left: 0.5rem;
+}
+
+.icon-default {
+    transition: opacity .5s, transform .5s;
+    
+}
+
+.icon-hover, .icon-disabled  {
+    transition: opacity .5s, transform .5s;
+    transform: rotate(-180deg) scale(.5);
+    opacity: 0;
+}
+
+
+.icon-hover.play, .icon-disabled.play {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+}
+.icon-default.play {
+    transform: rotate(180deg) scale(.5);
+    opacity: 0;
+}
+
+
+.icons {
+    position: relative;
+    top: 0.25rem;
+}
+
+mat-icon.icon-default, mat-icon.icon-hover {
+    position: absolute;
+}
+
+.item {
+    background: rgb(229, 229, 230, 0.5);
+}

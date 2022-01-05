@@ -1,0 +1,14 @@
+<div style='display: flex; justify-content: right;'>
+    <div [ngClass]="times.length > 1 ? 'opacity-1': 'opacity-0'">
+      <button mat-flat-button (click)="sort()" class="m-2">
+        Sort times
+          <mat-icon aria-hidden="false" aria-label="">sort</mat-icon>
+      </button>
+      <button mat-flat-button (click)="clear()">
+        Refresh
+          <mat-icon aria-hidden="false" aria-label="">refresh</mat-icon>
+      </button>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <app-timer-line *ngFor="let i of times" (timeEvent)="addTimerLine()"></app-timer-line>
