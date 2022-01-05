@@ -1,27 +1,47 @@
-# TwikitTimer
+# Twikit Time-it
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+Angular timer application assignment for Twikit.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Before starting make sure you have [NodeJS](https://nodejs.org/en/)(>=16) and [npm](https://www.npmjs.com/) installed. Then install [Angular CLI](https://angular.io/).
 
-## Code scaffolding
+```bash
+npm i -g @angular/cli
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+After clone the repository into your local environment. Open the a terminal/cmd window and navigate into the cloned repository and install the npm packages.
+```bash
+git clone git@github.com:VitorPaiva/twikit-timer.git
+cd twikit-timer
+npm i
+```
 
-## Build
+Then you can run the app in development mode with `ng serve`. Navigate to `http://localhost:4200/` to check out the app.
+## Subtasks
+For the UX/UI decided to use the Material UI package for Angular
+### Subtask 1
+To complete this task I decided to create 2 components. First the **timer-line** which consists of every line in the timer and then the **time-table** that would be composed by multiple lines and the buttons for **sorting** and **refresh**.  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+##### Timer-Line Component
+This component would have all the data and functionalities of each line in the table. The Play/Stop/Done button as well as the time itself. I also added a creationTime attribute to help with the sorting later. At last the line would emit an event whenever it changed it status to 'Done'.
 
-## Running unit tests
+##### Time-Table Component
+This component is composed by an array of Timer-Lines that would be visible to the user. This component also added the functionalities of sorting the already 'Done' times and refreshing the timer. The sorting of the lines will have in count the time of creation of the line using the attribute creationTime.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Subtask 2
+In this case a new component could have been created for the button but this was not the case. The way I decided to accomplish this task was by creating one button with all the icons where only one is active at a time. Then by adding or removing classes those icons would animate disappearing or appearing, depending on the classes. 
 
-## Running end-to-end tests
+### Subtask 3
+As mentioned before this button was part of the table component. Also as mentioned before a component could/should have been created for this button that could then be reused for all the buttons.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Subtask 4
+For theming I decided to use the Twikit colors with some slight changes.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Subtask 5
+Some UX improvement I would do:
+- Add a delete button at the end of each line (either a trash bin icon or a dash)
+- Instead of having multiple buttons to 'Play/Stop' I would create only one button at the bottom of the screen
+- Add more sorting options
+- Add numbers to the start of each line, to better keep track of the times
+- Highlight the best and worst times
